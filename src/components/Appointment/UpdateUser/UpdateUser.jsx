@@ -26,7 +26,9 @@ const UpdateUser = () => {
 
   const { refetch, isLoading } = useQuery(["update", id, update], () =>
     axios
-      .get(`http://localhost:3000/booking/${id}?email=${user?.email}`)
+      .get(
+        `https://royalerelaxo-server.onrender.com/booking/${id}?email=${user?.email}`
+      )
       .then((res) => {
         setUpdate(res.data);
       })
@@ -64,7 +66,7 @@ const UpdateUser = () => {
     };
 
     axios
-      .put(`http://localhost:3000/booking/${id}`, data)
+      .put(`https://royalerelaxo-server.onrender.com/booking/${id}`, data)
       .then((res) => {
         if (res.data.acknowledged === true) {
           toast.success(

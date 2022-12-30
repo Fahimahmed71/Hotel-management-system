@@ -9,7 +9,7 @@ const AllUsers = () => {
   const [users, setUsers] = useState([]);
 
   const { isLoading, refetch } = useQuery("users", () =>
-    axios("http://localhost:3000/user")
+    axios("https://royalerelaxo-server.onrender.com/user")
       .then((res) => {
         const data = res.data;
         setUsers(data);
@@ -22,30 +22,32 @@ const AllUsers = () => {
   }
 
   const makeAdmin = (email) => {
-    axios.put(`http://localhost:3000/user/admin/${email}`).then((res) => {
-      if (res.data) {
-        toast.success("Admin added successfully", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-        });
-      }
-      {
-        refetch;
-      }
-    });
+    axios
+      .put(`https://royalerelaxo-server.onrender.com/user/admin/${email}`)
+      .then((res) => {
+        if (res.data) {
+          toast.success("Admin added successfully", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+        }
+        {
+          refetch;
+        }
+      });
   };
 
   const handleDelete = (id) => {
     const confirm = window.confirm("Are you sure?");
 
     if (confirm) {
-      const url = `http://localhost:3000/user/${id}`;
+      const url = `https://royalerelaxo-server.onrender.com/user/${id}`;
 
       axios
         .delete(url)

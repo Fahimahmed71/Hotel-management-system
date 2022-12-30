@@ -8,9 +8,11 @@ const ListContent = () => {
   const [services, setServices] = useState([]);
 
   const { isLoading, refetch } = useQuery("listcontent", () =>
-    axios.get("http://localhost:3000/services").then((res) => {
-      setServices(res.data);
-    })
+    axios
+      .get("https://royalerelaxo-server.onrender.com/services")
+      .then((res) => {
+        setServices(res.data);
+      })
   );
 
   if (isLoading) {
@@ -21,7 +23,7 @@ const ListContent = () => {
     const confirm = window.confirm("Are you sure?");
 
     if (confirm) {
-      const url = `http://localhost:3000/services/${id}`;
+      const url = `https://royalerelaxo-server.onrender.com/services/${id}`;
 
       axios.delete(url).then((res) => {
         console.log(res.data);

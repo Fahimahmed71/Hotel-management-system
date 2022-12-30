@@ -15,7 +15,9 @@ const Appointment = () => {
 
   const { isLoading, refetch } = useQuery(["appointment", appointments], () =>
     axios
-      .get(`http://localhost:3000/booking?email=${user?.email}`)
+      .get(
+        `https://royalerelaxo-server.onrender.com/booking?email=${user?.email}`
+      )
       .then((res) => {
         const appointmentData = res.data;
 
@@ -31,7 +33,7 @@ const Appointment = () => {
     const confirm = window.confirm("Are you sure?");
 
     if (confirm) {
-      const url = `http://localhost:3000/booking/${e}`;
+      const url = `https://royalerelaxo-server.onrender.com/booking/${e}`;
 
       axios
         .delete(url)

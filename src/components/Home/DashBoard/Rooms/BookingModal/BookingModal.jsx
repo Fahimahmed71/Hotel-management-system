@@ -14,7 +14,7 @@ const BookingModal = ({ checkIn, date, setCheckIn, refetch }) => {
 
   const { isLoading } = useQuery("services", () =>
     axios
-      .get("http://localhost:3000/services/")
+      .get("https://royalerelaxo-server.onrender.com/services/")
       .then((res) => setServices(res.data))
   );
 
@@ -32,7 +32,7 @@ const BookingModal = ({ checkIn, date, setCheckIn, refetch }) => {
     const formatDate = format(date, "PP");
 
     axios
-      .post("http://localhost:3000/booking", {
+      .post("https://royalerelaxo-server.onrender.com/booking", {
         bookingid: _id,
         hotelName: hotelName,
         userName: user.displayName,

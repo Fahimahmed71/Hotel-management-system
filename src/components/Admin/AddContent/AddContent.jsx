@@ -19,7 +19,7 @@ const AddContent = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/services`)
+      .get(`https://royalerelaxo-server.onrender.com/services`)
       .then((res) => {
         setSlots(res.data[0].slots);
         setTime(res.data[0].time);
@@ -55,7 +55,10 @@ const AddContent = () => {
           time: time,
         };
         axios
-          .post(`http://localhost:3000/services`, contentData)
+          .post(
+            `https://royalerelaxo-server.onrender.com/services`,
+            contentData
+          )
           .then((res) => {
             if (res.data) {
               toast.success("Hotel successfully added", {

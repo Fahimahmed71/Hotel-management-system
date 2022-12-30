@@ -9,7 +9,7 @@ const useAdmin = (user) => {
     const email = user?.email;
 
     if (email) {
-      fetch(`http://localhost:3000/user/${email}`, {
+      fetch(`https://royalerelaxo-server.onrender.com/user/${email}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

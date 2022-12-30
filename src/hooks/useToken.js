@@ -11,7 +11,7 @@ const useToken = (user) => {
 
     if (email) {
       axios
-        .put(`http://localhost:3000/user/${email}`, {
+        .put(`https://royalerelaxo-server.onrender.com/user/${email}`, {
           currentUser,
         })
         .then((res) => console.log(res.data))

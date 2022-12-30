@@ -18,7 +18,9 @@ const Rooms = ({ date }) => {
 
   const { isLoading, refetch } = useQuery(["rooms", formattedDate, rooms], () =>
     axios
-      .get(`http://localhost:3000/available?date=${formattedDate}`)
+      .get(
+        `https://royalerelaxo-server.onrender.com/available?date=${formattedDate}`
+      )
       .then((res) => {
         const roomData = res.data;
 
