@@ -1,6 +1,6 @@
 MERN Stack Hotel management Application
 
-## To access admin: Email: admin@mail Password: 123456
+## To access admin: Email: admin@mail.com Password: 123456
 
 <br>
 
