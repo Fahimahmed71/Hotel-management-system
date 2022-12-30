@@ -1,5 +1,9 @@
 MERN Stack Hotel management Application
 
+## To access admin: Email: admin@mail Password: 123456
+
+<br>
+
 ### LIVE : [Skill-Assessment-Task-Appointment-Management-System-server](https://taskappointmentmanagementsystem.netlify.app/)
 
 <br>
